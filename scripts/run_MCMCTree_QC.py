@@ -3,10 +3,10 @@ import shutil
 import subprocess
 import concurrent.futures
 
-folder_x = "/linuxhome/tmp/martijn/trees_results/"
-folder_y1 = "/linuxhome/tmp/martijn/fa_files/1"
-folder_y2 = "/linuxhome/tmp/martijn/fa_files/2"
-folder_z = "/linuxhome/tmp/martijn/seqs_results/"
+folder_x = "/linuxhome/tmp/user/trees_results/"
+folder_y1 = "/linuxhome/tmp/user/fa_files/1"
+folder_y2 = "/linuxhome/tmp/user/fa_files/2"
+folder_z = "/linuxhome/tmp/user/seqs_results/"
 
 def take_first_part_name(file):
     split = file.split("_")
@@ -56,14 +56,14 @@ def run_scripts(file):
     process = subprocess.Popen(["bash", 'prep.sh', file, corresponding_sequence[0], corresponding_header[0]],
                          stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE,
-                         cwd = r'/linuxhome/tmp/martijn/MCMCTree_runs/' + dir_name + "/")
+                         cwd = r'/linuxhome/tmp/user/MCMCTree_runs/' + dir_name + "/")
     stdout, stderr = process.communicate()
     stdout, stderr
     print("starting MCMCTree:", file)
     process = subprocess.Popen(["bash",'run_MCMCTree.sh'],
                          stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE,
-                         cwd = r'/linuxhome/tmp/martijn/MCMCTree_runs/' + dir_name + "/")
+                         cwd = r'/linuxhome/tmp/user/MCMCTree_runs/' + dir_name + "/")
     stdout, stderr = process.communicate()
     stdout, stderr
     print("finished MCMCTree:", file)
