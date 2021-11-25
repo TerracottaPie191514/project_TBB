@@ -6,3 +6,4 @@ Scripts that subset the given trees into [both prokaryotic and eukaryotic subset
 An MCMCTree [control file](MCMCTree.ctl) is set to work on protein data with an approximate likelihood calculation. An [empirical rate matrix with Gamma rates among sites](wag.dat) is utilized. A relaxed independent clock with a rootage of 4500 Myr is used. Other parameters are set to default for the main portion of the analysis.
 ### Pipeline
 After tree pruning, a [script](scripts/prep.sh) prepares the tree files for use of MCMCTree.
+[folder](scripts)
